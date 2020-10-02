@@ -27,8 +27,6 @@ public class TokenUtils {
     public static String claimsAsJson(Map<String, Claim> claims) {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode node = objectMapper.createObjectNode();
-
-
         claims.forEach((key, value) -> {
             if (value.asMap() != null) {
                 node.putPOJO(key, value.asMap());
