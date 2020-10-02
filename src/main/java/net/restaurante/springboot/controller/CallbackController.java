@@ -22,7 +22,6 @@ import java.io.IOException;
 @SuppressWarnings("unused")
 @Controller
 public class CallbackController {
-
     @Autowired
     private AuthenticationController controller;
     private final String redirectOnFail;
