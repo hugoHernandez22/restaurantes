@@ -1,4 +1,5 @@
 package net.restaurante.springboot.controller;
+/*
 
 import net.restaurante.springboot.security.TokenAuthentication;
 import net.restaurante.springboot.util.TokenUtils;
@@ -30,7 +31,7 @@ public class ProfileController {
 
         model.addAttribute("profile", tokenAuthentication.getClaims());
         model.addAttribute("profileJson", profileJson);
-        return "profile";
+        return "hola";
     }
 
-}
+}*/

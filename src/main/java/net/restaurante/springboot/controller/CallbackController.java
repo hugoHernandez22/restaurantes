@@ -1,4 +1,4 @@
-package net.restaurante.springboot.controller;
+/*package net.restaurante.springboot.controller;
 
 
 import com.auth0.AuthenticationController;
@@ -11,13 +11,14 @@ import org.springframework.http.MediaType;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
+@CrossOrigin(origins = "http://127.0.0.1:4200")
 @SuppressWarnings("unused")
 @Controller
 public class CallbackController {
@@ -28,7 +29,7 @@ public class CallbackController {
 
     public CallbackController() {
         this.redirectOnFail = "/login";
-        this.redirectOnSuccess = "/";
+        this.redirectOnSuccess = "/api/restaurante/restaurantes";
     }
 
     @RequestMapping(value = "/callback", method = RequestMethod.GET)
@@ -55,4 +56,4 @@ public class CallbackController {
         }
     }
 
-}
+}*/

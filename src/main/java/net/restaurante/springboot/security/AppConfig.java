@@ -1,4 +1,4 @@
-package net.restaurante.springboot.security;
+/*package net.restaurante.springboot.security;
 
 
 import com.auth0.AuthenticationController;
@@ -21,21 +21,14 @@ import java.io.UnsupportedEncodingException;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AppConfig extends WebSecurityConfigurerAdapter {
-    /**
-     * This is your auth0 domain (tenant you have created when registering with auth0 - account name)
-     */
+ 
     @Value(value = "${com.auth0.domain}")
     private String domain;
 
-    /**
-     * This is the client id of your auth0 application (see Settings page on auth0 dashboard)
-     */
+
     @Value(value = "${com.auth0.clientId}")
     private String clientId;
 
-    /**
-     * This is the client secret of your auth0 application (see Settings page on auth0 dashboard)
-     */
     @Value(value = "${com.auth0.clientSecret}")
     private String clientSecret;
 
@@ -75,4 +68,4 @@ public class AppConfig extends WebSecurityConfigurerAdapter {
     public String getClientSecret() {
         return clientSecret;
     }
-}
+}*/
