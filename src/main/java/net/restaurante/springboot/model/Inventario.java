@@ -18,6 +18,7 @@ public class Inventario {
 	private float CANTIDAD; 
 	private float PRECIO;
 	private long INV_TYPE;
+	private int ID_RESTAURANTE;
 	private long ESTADO;
 	private int USER_ADD;
 	private Date FECHA_C;
@@ -26,13 +27,14 @@ public class Inventario {
 	public Inventario() {
 		super();
 	}
-	public Inventario(int pRODUCTO, float cANTIDAD, float pRECIO, long iNV_TYPE, long eSTADO, int uSER_ADD,
-			Date fECHA_C, int uSER_U, Date fECHA_U) {
+	public Inventario(int pRODUCTO, float cANTIDAD, float pRECIO, long iNV_TYPE, int iD_RESTAURANTE, long eSTADO,
+			int uSER_ADD, Date fECHA_C, int uSER_U, Date fECHA_U) {
 		super();
 		PRODUCTO = pRODUCTO;
 		CANTIDAD = cANTIDAD;
 		PRECIO = pRECIO;
 		INV_TYPE = iNV_TYPE;
+		ID_RESTAURANTE = iD_RESTAURANTE;
 		ESTADO = eSTADO;
 		USER_ADD = uSER_ADD;
 		FECHA_C = fECHA_C;
@@ -48,11 +50,9 @@ public class Inventario {
 	public int getPRODUCTO() {
 		return PRODUCTO;
 	}
-	
 	public void setPRODUCTO(int pRODUCTO) {
 		PRODUCTO = pRODUCTO;
 	}
-	
 	public float getCANTIDAD() {
 		return CANTIDAD;
 	}
@@ -70,6 +70,12 @@ public class Inventario {
 	}
 	public void setINV_TYPE(long iNV_TYPE) {
 		INV_TYPE = iNV_TYPE;
+	}
+	public int getID_RESTAURANTE() {
+		return ID_RESTAURANTE;
+	}
+	public void setID_RESTAURANTE(int iD_RESTAURANTE) {
+		ID_RESTAURANTE = iD_RESTAURANTE;
 	}
 	public long getESTADO() {
 		return ESTADO;
@@ -101,6 +107,7 @@ public class Inventario {
 	public void setFECHA_U(Date fECHA_U) {
 		FECHA_U = fECHA_U;
 	}
+	
 	
 	
 	

@@ -26,7 +26,7 @@ public class EmpleadoController {
 	@Autowired
 	private EmpleadoRepository empleadoRepository;
 	//get empleados
-	/*@GetMapping("empleados")
+	@GetMapping("empleados")
 	public List<Empleado> getAllEmpleado(){
 		return this.empleadoRepository.findAll();
 	}
@@ -74,5 +74,5 @@ public class EmpleadoController {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
-	}*/
+	}
 }

@@ -20,6 +20,7 @@ public class Empleado {
 	private String APELLIDOS;
 	private String DIRECCION;
 	private String TELEFONO;
+	private int ID_RESTAURANTE;
 	private long TIPO;
 	private long ESTADO;
 	private int USER_ADD;
@@ -30,14 +31,15 @@ public class Empleado {
 	public Empleado() {
 		super();
 	}
-	public Empleado(int cUI, String nOMBRES, String aPELLIDOS, String dIRECCION, String tELEFONO, long tIPO,
-			long eSTADO, int uSER_ADD, Date fECHA_C) {
+	public Empleado(int cUI, String nOMBRES, String aPELLIDOS, String dIRECCION, String tELEFONO, int iD_RESTAURANTE,
+			long tIPO, long eSTADO, int uSER_ADD, Date fECHA_C) {
 		super();
 		CUI = cUI;
 		NOMBRES = nOMBRES;
 		APELLIDOS = aPELLIDOS;
 		DIRECCION = dIRECCION;
 		TELEFONO = tELEFONO;
+		ID_RESTAURANTE = iD_RESTAURANTE;
 		TIPO = tIPO;
 		ESTADO = eSTADO;
 		USER_ADD = uSER_ADD;
@@ -79,6 +81,12 @@ public class Empleado {
 	public void setTELEFONO(String tELEFONO) {
 		TELEFONO = tELEFONO;
 	}
+	public int getID_RESTAURANTE() {
+		return ID_RESTAURANTE;
+	}
+	public void setID_RESTAURANTE(int iD_RESTAURANTE) {
+		ID_RESTAURANTE = iD_RESTAURANTE;
+	}
 	public long getTIPO() {
 		return TIPO;
 	}
@@ -104,5 +112,9 @@ public class Empleado {
 		FECHA_C = fECHA_C;
 	}
 	
+	
+	
+	
+		
 	
 }

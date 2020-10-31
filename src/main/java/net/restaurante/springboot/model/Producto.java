@@ -14,7 +14,7 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int ID_PRODUCTO;
 	private String PRODUCTO;  
-	
+	private int ID_RESTAURANTE;
 	private long ESTADO;
 	private int USER_ADD;
 	private Date FECHA_C;
@@ -23,9 +23,11 @@ public class Producto {
 	public Producto() {
 		super();
 	}
-	public Producto(String pRODUCTO, long eSTADO, int uSER_ADD, Date fECHA_C, int uSER_U, Date fECHA_U) {
+	public Producto(String pRODUCTO, int iD_RESTAURANTE, long eSTADO, int uSER_ADD, Date fECHA_C, int uSER_U,
+			Date fECHA_U) {
 		super();
 		PRODUCTO = pRODUCTO;
+		ID_RESTAURANTE = iD_RESTAURANTE;
 		ESTADO = eSTADO;
 		USER_ADD = uSER_ADD;
 		FECHA_C = fECHA_C;
@@ -43,6 +45,12 @@ public class Producto {
 	}
 	public void setPRODUCTO(String pRODUCTO) {
 		PRODUCTO = pRODUCTO;
+	}
+	public int getID_RESTAURANTE() {
+		return ID_RESTAURANTE;
+	}
+	public void setID_RESTAURANTE(int iD_RESTAURANTE) {
+		ID_RESTAURANTE = iD_RESTAURANTE;
 	}
 	public long getESTADO() {
 		return ESTADO;
@@ -75,6 +83,4 @@ public class Producto {
 		FECHA_U = fECHA_U;
 	}
 	
-	
-
 }
