@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.restaurante.springboot.exception.ResourceNotFoundException;
-
 import net.restaurante.springboot.model.Ventas;
 import net.restaurante.springboot.repository.VentaRepository;
 import net.restaurante.springboot.service.VentasService;
@@ -43,9 +42,14 @@ public class VentasController {
 	}
 	
 	//POST SALE
-	@PostMapping("ventas")
+	/*@PostMapping("ventas")
 	public Ventas createVentas(Ventas venta) {
 		return ventaservice.createVentas(venta);
+	}*/
+	//post ventas
+	@PostMapping("ventas")
+	public Ventas createVenta(@RequestBody Ventas venta) {
+		return ventaRepository.save(venta);
 	}
 	
 	//PUT SALES

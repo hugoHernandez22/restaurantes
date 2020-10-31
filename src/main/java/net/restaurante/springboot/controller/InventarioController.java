@@ -42,10 +42,15 @@ public class InventarioController {
 	}
 	
 	//POST INVENTARIO
-		@PostMapping("inventario")
+		/*@PostMapping("inventario")
 		public Inventario createInventario(Inventario inventario) {
 			return inventarioService.createInventario(inventario);
-		}
+		}*/
+	//post inventario
+	@PostMapping("inventario")
+	public Inventario createInventario(@RequestBody Inventario inventario) {
+		return inventarioRepository.save(inventario);
+	}
 		
 	//PUT INVENTARIO
 		@PutMapping("/inventario/{id}")

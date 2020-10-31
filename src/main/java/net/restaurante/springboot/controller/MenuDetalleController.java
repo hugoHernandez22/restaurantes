@@ -44,10 +44,16 @@ public class MenuDetalleController {
 	}
 	
 	//POST MENU DETAIL
-	@PostMapping("detalleMenu")
+	/*@PostMapping("detalleMenu")
 	public MenuDetalle createMenuDetail(MenuDetalle menu) {
 		return menuDetalleService.createMenuDetail(menu);
-	}
+	}*/
+	
+	//post menu
+		@PostMapping("detalleMenu")
+		public MenuDetalle createMenuDetail(@RequestBody MenuDetalle menu) {
+			return menuDetalleRepository.save(menu);
+		}
 	
 	//PUT MENU DETAIL
 	@PutMapping("/detalleMenu/{id}")

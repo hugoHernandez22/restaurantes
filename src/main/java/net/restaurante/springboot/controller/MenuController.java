@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import net.restaurante.springboot.exception.ResourceNotFoundException;
+
 import net.restaurante.springboot.model.Menu;
 import net.restaurante.springboot.repository.MenuRepository;
 import net.restaurante.springboot.service.MenuService;
@@ -42,9 +43,14 @@ public class MenuController {
 	}
 	
 	//POST MENU
-	@PostMapping("menu")
+	/*@PostMapping("menu")
 	public Menu createMenu(Menu menu) {
 		return menuService.createMenu(menu);
+	}*/
+	//post menu
+	@PostMapping("menu")
+	public Menu createMenu(@RequestBody Menu menu) {
+		return menuRepository.save(menu);
 	}
 	
 	//PUT MENU
