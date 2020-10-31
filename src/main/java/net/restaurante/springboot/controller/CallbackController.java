@@ -1,6 +1,4 @@
 /*package net.restaurante.springboot.controller;
-
-
 import com.auth0.AuthenticationController;
 import com.auth0.IdentityVerificationException;
 import com.auth0.Tokens;

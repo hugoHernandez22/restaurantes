@@ -19,13 +19,64 @@ import org.springframework.web.bind.annotation.RestController;
 import net.restaurante.springboot.exception.ResourceNotFoundException;
 import net.restaurante.springboot.model.Inventario;
 import net.restaurante.springboot.repository.InventarioRepository;
+import net.restaurante.springboot.service.InventarioService;
 //@CrossOrigin(origins = "http://127.0.0.1:4200")
 @RestController
 @RequestMapping("/api/restaurante/")
 public class InventarioController {
 	@Autowired
+	private InventarioService inventarioService;
+	//private InventarioRepository inventarioRepository;
+	@Autowired
 	private InventarioRepository inventarioRepository;
-	//GET INVENTARIO
+	//GET INVENTARIO 
+	@GetMapping("inventario")
+	public List<Inventario> getALLInventario(){
+		return this.inventarioService.getALLInventario();
+	}
+	//GET INVENTARIO BY ID
+	@GetMapping("/inventario/{id}")
+	public Inventario getInventarioById(@PathVariable Integer id)
+	{
+		return this.inventarioService.getInventarioById(id);
+	}
+	
+	//POST INVENTARIO
+		@PostMapping("inventario")
+		public Inventario createInventario(Inventario inventario) {
+			return inventarioService.createInventario(inventario);
+		}
+		
+	//PUT INVENTARIO
+		@PutMapping("/inventario/{id}")
+		public ResponseEntity<Inventario> updateInventario(@PathVariable(value = "id") Integer inventarioId,
+			@RequestBody Inventario inventarioDetalles) throws ResourceNotFoundException {
+			Inventario inventario = inventarioRepository.findById(inventarioId)
+			.orElseThrow(() -> new ResourceNotFoundException("Inventory not found for this id :: " + inventarioId));
+			
+			inventario.setPRODUCTO(inventarioDetalles.getPRODUCTO());
+			inventario.setCANTIDAD(inventarioDetalles.getCANTIDAD());
+			inventario.setPRECIO(inventarioDetalles.getPRECIO());
+			inventario.setESTADO(inventarioDetalles.getESTADO());
+			inventario.setUSER_U(inventarioDetalles.getUSER_U());
+			inventario.setFECHA_U(inventarioDetalles.getFECHA_U());
+			final Inventario updatedInventario = inventarioRepository.save(inventario);
+			return ResponseEntity.ok(updatedInventario);
+		}
+		
+		
+		//DELETE INVENTARIO 
+		@DeleteMapping("/inventario/{id}")
+		public Map<String, Boolean> deleteInventario(@PathVariable(value = "id") Integer inventarioId)
+			throws ResourceNotFoundException {
+			Inventario inventario = inventarioRepository.findById(inventarioId)
+			.orElseThrow(() -> new ResourceNotFoundException("Inventario not found for this id :: " + inventarioId));
+			inventarioRepository.delete(inventario);
+			Map<String, Boolean> response = new HashMap<>();
+			response.put("deleted", Boolean.TRUE);
+			return response;
+		}
+	/*//GET INVENTARIO
 	@GetMapping("inventario")
 	public List<Inventario> getALLInventario(){
 		return this.inventarioRepository.findAll();
@@ -73,5 +124,5 @@ public class InventarioController {
 		Map<String, Boolean> response = new HashMap<>();
 		response.put("deleted", Boolean.TRUE);
 		return response;
-	}
+	}*/
 }
