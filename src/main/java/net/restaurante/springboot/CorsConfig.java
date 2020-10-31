@@ -17,7 +17,7 @@ public class CorsConfig{
 				registry.addMapping("/**")
 					.allowedMethods("GET", "POST", "PUT", "DELETE")
 					.allowedHeaders("*")
-					.allowedOrigins("https://desarrollowebjayrong.github.io/Restaurante-Page/#/callback", "https://dev-q3zvtswy.us.auth0.com/");
+					.allowedOrigins("https://desarrollowebjayrong.github.io/Restaurante-Page/");
 			}
 		};
 	}
